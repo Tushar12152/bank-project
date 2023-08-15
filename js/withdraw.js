@@ -1,7 +1,12 @@
 document.getElementById('btn-withdraw').addEventListener('click',function(){
          const withdrawField=document.getElementById('withdrow-field');
          const newWitrhdraw= parseFloat(withdrawField.value);
-         
+         withdrawField.value='';
+
+          if(isNaN(newWitrhdraw)){
+            alert('please type your ammount')
+            return;
+          }
          
 
          const totalWithdraw=document.getElementById('total-withdraw');
@@ -14,7 +19,7 @@ document.getElementById('btn-withdraw').addEventListener('click',function(){
         
 
          totalWithdraw.innerText=currentTotalWithdraw;
-         withdrawField.value='';
+         
 
         
 

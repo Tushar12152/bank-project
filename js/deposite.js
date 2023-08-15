@@ -1,7 +1,12 @@
 document.getElementById('btn-deposite').addEventListener('click',function(){
          const depositeField=document.getElementById('deposite-field');
          const newDepositeAmmount= parseFloat(depositeField.value);
-        
+         depositeField.value='';
+
+        if(isNaN(newDepositeAmmount)){
+         alert('please enter your ammount')
+         return
+        }
           
 
        const depositeTotalElement = document.getElementById('totalDeposite');
@@ -9,7 +14,7 @@ document.getElementById('btn-deposite').addEventListener('click',function(){
       
           const currentDipositeTotal=newDepositeAmmount+previousDepositeTotal
        depositeTotalElement.innerText=currentDipositeTotal;
-       depositeField.value='';
+     
 
        const totalBalanceElement=document.getElementById('total-balance')
        const previousbalancetotal=parseFloat(totalBalanceElement.innerText);
